@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FunctionOracle class="oracle.dbtools.crest.model.design.storage.oracle.FunctionOracle" name="get_total_confirmed_reservation" directorySegmentName="seg_0" id="D4920894-D9B1-4816-513A-316E5C7DBD1F">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-26 18:44:53 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace NONEDITIONABLE FUNCTION get_total_confirmed_reservation RETURN INTEGER IS
+  v_total_reservations INTEGER;
+BEGIN
+  SELECT COUNT(*) INTO v_total_reservations
+  FROM reservations
+  WHERE status = &apos;Confirmed&apos;;
+  RETURN v_total_reservations;
+END get_total_confirmed_reservation;</source>
+</FunctionOracle>

@@ -1,0 +1,67 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="restaurantmanagers" directorySegmentName="seg_0" id="BE2E4306-11BD-2EBB-3E48-D1BDF0C4D40F">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="nume" id="23156511-BA43-9D23-734B-0DFCCC3353DD">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="restaurant_id" id="37A07AD7-22D7-0330-A3FD-DC036440EC65">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="phone" id="8F37D4E3-C17D-0E25-F79F-2DB271270B26">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="email" id="C5BE336C-D8F6-1466-3913-6A12463E2DE0">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="manager_id" id="DCBC5956-2D1B-1E96-CE45-79C40EAF13B0">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="restmng_restaurants_fk" id="723E4BC2-3856-D3D0-3696-790D1B28811F">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="restaurantmanagers_pk" id="01BBB434-2039-0853-554A-F5E06823D854">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="restaurantmanagers_email_un" id="003F70D2-CB83-DA95-4116-0DED5BA8FB0A">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</UniqueKey>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="restaurantmanagers__un" id="D2195B2F-5BE3-F3B9-0C7A-0C7D2D036783">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev12c>

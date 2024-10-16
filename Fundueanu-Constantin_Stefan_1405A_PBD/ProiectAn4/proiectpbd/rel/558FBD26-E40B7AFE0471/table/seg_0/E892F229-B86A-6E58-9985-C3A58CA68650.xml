@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E892F229-B86A-6E58-9985-C3A58CA68650" name="reservations">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>6ACE9B6A-752D-4645-B5E5-3DD9A0E7FA03</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="reservation_id" id="8008875A-A371-06CD-8B9A-E9598F67DE19">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>72B50CBB-A2B4-62A9-F50A-E9DCB9A2BE95</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9AF48BAB-4CEC-7D07-EE82-4F936DA5EF23</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="reservation_date" id="BA592498-B12E-2CD3-DA5B-65F73DA1FCA8">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>0C45218C-53CD-27BC-8ABC-D5082471DBE4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>9000EF95-2F81-6135-916C-E183CC78D8B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="number_of_guests" id="C57947B7-4963-2E03-38E2-3E7959071F92">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>1D76B941-8D3D-8802-503F-AD7665E9E3A3</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9AF48BAB-4CEC-7D07-EE82-4F936DA5EF23</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status" id="1AF7790D-CC18-BBA5-6AC5-71D3EA6E4419">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>9456F5C9-CEA0-333D-B512-4DB8B382489C</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>F5A5449B-EB7F-C698-C0AF-BBBB7694B2FC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="table_id" id="D00B5357-9C26-4E15-F025-BB9CBEFCD4E3">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>3976F669-50A0-DE8C-C7EC-3EFD63FC0283</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9AF48BAB-4CEC-7D07-EE82-4F936DA5EF23</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7DB28E9D-7843-14B3-2DD5-BDB50122C728" referredColumn="D055E3E6-D420-9892-DBC8-DCBF380CBB20"/>
+</associations>
+</Column>
+<Column name="customer_id" id="7B31E12C-31B6-DECA-B79B-4E02842E8052">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>40D177CA-5898-667C-0960-9C6D5AB18052</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9AF48BAB-4CEC-7D07-EE82-4F936DA5EF23</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DFEDD2DE-2027-93B9-3AE8-7B18F1E2B3EE" referredColumn="090876BF-03D4-9B34-9A69-DF161D2F9B34"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="86DACD0E-3500-7B4B-C19B-8C971A1FB664" name="reservations_pk">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>E7C38486-9295-6885-5935-5E09488700DB</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8008875A-A371-06CD-8B9A-E9598F67DE19"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="33B34A11-1148-C98C-D6B0-FA722D7DC05E" name="reservations_customers_fk">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7B31E12C-31B6-DECA-B79B-4E02842E8052"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BDB7A517-9E40-AED0-6860-89113CB3053B" name="reservations_tables_fk">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D00B5357-9C26-4E15-F025-BB9CBEFCD4E3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

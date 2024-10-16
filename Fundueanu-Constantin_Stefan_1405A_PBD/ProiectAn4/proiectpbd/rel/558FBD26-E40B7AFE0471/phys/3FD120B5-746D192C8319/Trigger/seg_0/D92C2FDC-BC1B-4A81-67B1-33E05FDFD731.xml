@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="trg_delete_customer" directorySegmentName="seg_0" id="D92C2FDC-BC1B-4A81-67B1-33E05FDFD731">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-26 18:50:58 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<actions>DELETE</actions>
+<body><![CDATA[DECLARE
+  CURSOR reservations_cursor IS
+    SELECT reservation_id
+    FROM reservations 
+    WHERE customer_id = :OLD.customer_id;
+
+  v_reservation_id reservations.reservation_id%TYPE;
+BEGIN
+  -- Iteram prin toate rezervarile asociate clientului care a fost sters
+  OPEN reservations_cursor;
+  LOOP
+    FETCH reservations_cursor INTO v_reservation_id;
+    EXIT WHEN reservations_cursor%NOTFOUND;
+
+    DELETE FROM reservations WHERE reservation_id = v_reservation_id;
+  END LOOP;
+  CLOSE reservations_cursor;
+END;]]></body>
+<triggerTime>AFTER</triggerTime>
+<table>71A5104C-520C-83DB-A4FE-8FE8341E0CD8</table>
+</TriggerOraclev10g>

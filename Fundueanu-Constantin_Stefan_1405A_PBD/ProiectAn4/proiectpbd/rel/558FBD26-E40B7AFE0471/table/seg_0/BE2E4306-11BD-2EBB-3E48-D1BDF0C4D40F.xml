@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BE2E4306-11BD-2EBB-3E48-D1BDF0C4D40F" name="restaurantmanagers">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>D8483162-F50E-C7FD-322A-722592C2B0AE</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="manager_id" id="DCBC5956-2D1B-1E96-CE45-79C40EAF13B0">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>E91A33D8-1CB7-965C-ACC7-D88DD03C3D3E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9AF48BAB-4CEC-7D07-EE82-4F936DA5EF23</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nume" id="23156511-BA43-9D23-734B-0DFCCC3353DD">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>C1A82E04-A670-7877-0FA6-C5B26D47628F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>6B228094-7BBB-F9FB-890A-711688F609B8</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone" id="8F37D4E3-C17D-0E25-F79F-2DB271270B26">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>F019643F-5D53-9FB5-7656-AAD17DB42F33</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>1BB0F7B4-B0B9-F2D4-C16D-E5F0FF0F8380</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="C5BE336C-D8F6-1466-3913-6A12463E2DE0">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>DC84F631-053D-CF2B-3034-87EC7641291E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>3DBF3451-C43A-D1A0-9047-2C12A32D42B8</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="restaurant_id" id="37A07AD7-22D7-0330-A3FD-DC036440EC65">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>C21F529B-7EB4-5B68-6F55-FEE6E964A0E2</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9AF48BAB-4CEC-7D07-EE82-4F936DA5EF23</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="68A2EEB7-1B22-76F5-9664-21273D08C82D" referredColumn="50D25BC4-49E3-CA73-6A3C-A2D6178A1170"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="01BBB434-2039-0853-554A-F5E06823D854" name="restaurantmanagers_pk">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>373CE11E-B34B-B541-2086-28A2A7FFF59C</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DCBC5956-2D1B-1E96-CE45-79C40EAF13B0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D2195B2F-5BE3-F3B9-0C7A-0C7D2D036783" name="restaurantmanagers__un">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>D6BF5CD2-BFD6-C3C1-A8BD-3A506E53ABD6</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="37A07AD7-22D7-0330-A3FD-DC036440EC65"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="003F70D2-CB83-DA95-4116-0DED5BA8FB0A" name="restaurantmanagers_email_un">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>0524AAE8-B323-A4C4-288E-1EF335CE4B05</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C5BE336C-D8F6-1466-3913-6A12463E2DE0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="723E4BC2-3856-D3D0-3696-790D1B28811F" name="restmng_restaurants_fk">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="37A07AD7-22D7-0330-A3FD-DC036440EC65"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

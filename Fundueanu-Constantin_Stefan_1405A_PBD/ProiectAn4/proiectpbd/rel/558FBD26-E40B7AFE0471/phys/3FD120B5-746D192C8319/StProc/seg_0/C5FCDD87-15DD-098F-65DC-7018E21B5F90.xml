@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<StoredProcedureOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.StoredProcedureOraclev10g" name="ListReservationsForCustomer" directorySegmentName="seg_0" id="C5FCDD87-15DD-098F-65DC-7018E21B5F90">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-26 18:42:59 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace PROCEDURE ListReservationsForCustomer(
+    p_customer_id IN INTEGER
+) IS
+    --  cursor pentru a selecta rezervarile clientului
+    CURSOR reservations_cursor IS
+        SELECT reservation_id, reservation_date, number_of_guests, status, table_id
+        FROM reservations
+        WHERE customer_id = p_customer_id;
+
+    -- variabile
+    v_reservation_id reservations.reservation_id%TYPE;
+    v_reservation_date reservations.reservation_date%TYPE;
+    v_number_of_guests reservations.number_of_guests%TYPE;
+    v_status reservations.status%TYPE;
+    v_table_id reservations.table_id%TYPE;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(&apos;Rezervarile pentru clientul cu ID &apos; || p_customer_id || &apos;:&apos;);
+
+
+    OPEN reservations_cursor;
+
+
+    LOOP
+        FETCH reservations_cursor INTO v_reservation_id, v_reservation_date, v_number_of_guests, v_status, v_table_id;
+        EXIT WHEN reservations_cursor%NOTFOUND;
+
+        -- Afișarea detalii
+        DBMS_OUTPUT.PUT_LINE(&apos;Reservation ID: &apos; || v_reservation_id);
+        DBMS_OUTPUT.PUT_LINE(&apos;Reservation Date: &apos; || v_reservation_date);
+        DBMS_OUTPUT.PUT_LINE(&apos;Number of Guests: &apos; || v_number_of_guests);
+        DBMS_OUTPUT.PUT_LINE(&apos;Status: &apos; || v_status);
+        DBMS_OUTPUT.PUT_LINE(&apos;Table ID: &apos; || v_table_id);
+        DBMS_OUTPUT.PUT_LINE(&apos;----------------------------&apos;);
+    END LOOP;
+
+
+    CLOSE reservations_cursor;
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE(&apos;Eroare la listarea rezervarilor: &apos; || SQLERRM);
+END;</source>
+</StoredProcedureOraclev10g>

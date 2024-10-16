@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="tabless_pkg" directorySegmentName="seg_0" id="7692E398-4837-E4F0-CF8C-F7BE7C3B9CB2">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-25 15:51:27 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace PACKAGE tabless_pkg AS
+  PROCEDURE insert_table(p_table_id IN INTEGER, p_numar IN INTEGER, p_seating_capacity IN INTEGER, p_restaurant_id IN INTEGER);
+  PROCEDURE update_table(p_table_id IN INTEGER, p_numar IN INTEGER, p_seating_capacity IN INTEGER, p_restaurant_id IN INTEGER);
+  PROCEDURE delete_table(p_table_id IN INTEGER);
+END tabless_pkg;</source>
+<body class="oracle.dbtools.crest.model.design.storage.oracle.PackageBodyOracle" name="tabless_pkg" id="7692E398-4837-E4F0-CF8C-F7BE7C3B9CB2">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-25 15:51:50 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace PACKAGE BODY tabless_pkg AS
+  PROCEDURE insert_table(p_table_id IN INTEGER, p_numar IN INTEGER, p_seating_capacity IN INTEGER, p_restaurant_id IN INTEGER) IS
+  BEGIN
+    INSERT INTO tabless (table_id, numar, seating_capacity, restaurant_id) VALUES (p_table_id, p_numar, p_seating_capacity, p_restaurant_id);
+  END insert_table;
+
+  PROCEDURE update_table(p_table_id IN INTEGER, p_numar IN INTEGER, p_seating_capacity IN INTEGER, p_restaurant_id IN INTEGER) IS
+  BEGIN
+    UPDATE tabless SET numar = p_numar, seating_capacity = p_seating_capacity, restaurant_id = p_restaurant_id WHERE table_id = p_table_id;
+  END update_table;
+
+  PROCEDURE delete_table(p_table_id IN INTEGER) IS
+  BEGIN
+    DELETE FROM tabless WHERE table_id = p_table_id;
+  END delete_table;
+END tabless_pkg;</source>
+</body>
+</PackageOracle>

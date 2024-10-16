@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<StoredProcedureOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.StoredProcedureOraclev10g" name="delete_customer_and_reservations" directorySegmentName="seg_0" id="82669757-C157-6F38-776A-F4E9C9F5D8ED">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-26 18:42:16 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace NONEDITIONABLE PROCEDURE delete_customer_and_reservations(p_customer_id IN INTEGER) IS
+BEGIN
+  DELETE FROM reservations WHERE customer_id = p_customer_id;
+  DELETE FROM customers WHERE customer_id = p_customer_id;
+  COMMIT;
+END delete_customer_and_reservations;</source>
+</StoredProcedureOraclev10g>

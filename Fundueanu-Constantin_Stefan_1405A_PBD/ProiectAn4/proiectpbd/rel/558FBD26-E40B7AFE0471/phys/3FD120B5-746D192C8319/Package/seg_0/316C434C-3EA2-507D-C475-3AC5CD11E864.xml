@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="restaurantmanagers_pkg" directorySegmentName="seg_0" id="316C434C-3EA2-507D-C475-3AC5CD11E864">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-25 14:24:58 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace PACKAGE restaurantmanagers_pkg AS
+  PROCEDURE insert_manager(p_manager_id IN INTEGER, p_nume IN VARCHAR2, p_phone IN VARCHAR2, p_email IN VARCHAR2, p_restaurant_id IN INTEGER);
+  PROCEDURE update_manager(p_manager_id IN INTEGER, p_nume IN VARCHAR2, p_phone IN VARCHAR2, p_email IN VARCHAR2, p_restaurant_id IN INTEGER);
+  PROCEDURE delete_manager(p_manager_id IN INTEGER);
+END restaurantmanagers_pkg;</source>
+<body class="oracle.dbtools.crest.model.design.storage.oracle.PackageBodyOracle" name="restaurantmanagers_pkg" id="316C434C-3EA2-507D-C475-3AC5CD11E864">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-25 15:50:11 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace PACKAGE BODY restaurantmanagers_pkg AS
+  PROCEDURE insert_manager(p_manager_id IN INTEGER, p_nume IN VARCHAR2, p_phone IN VARCHAR2, p_email IN VARCHAR2, p_restaurant_id IN INTEGER) IS
+  BEGIN
+    INSERT INTO restaurantmanagers (manager_id, nume, phone, email, restaurant_id) VALUES (p_manager_id, p_nume, p_phone, p_email, p_restaurant_id);
+  END insert_manager;
+
+  PROCEDURE update_manager(p_manager_id IN INTEGER, p_nume IN VARCHAR2, p_phone IN VARCHAR2, p_email IN VARCHAR2, p_restaurant_id IN INTEGER) IS
+  BEGIN
+    UPDATE restaurantmanagers SET nume = p_nume, phone = p_phone, email = p_email, restaurant_id = p_restaurant_id WHERE manager_id = p_manager_id;
+  END update_manager;
+
+  PROCEDURE delete_manager(p_manager_id IN INTEGER) IS
+  BEGIN
+    DELETE FROM restaurantmanagers WHERE manager_id = p_manager_id;
+  END delete_manager;
+END restaurantmanagers_pkg;</source>
+</body>
+</PackageOracle>

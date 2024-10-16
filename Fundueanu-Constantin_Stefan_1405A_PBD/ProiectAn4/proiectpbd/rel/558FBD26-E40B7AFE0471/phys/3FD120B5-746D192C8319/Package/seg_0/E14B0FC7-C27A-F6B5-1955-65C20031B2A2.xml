@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="restaurants_pkg" directorySegmentName="seg_0" id="E14B0FC7-C27A-F6B5-1955-65C20031B2A2">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-25 15:50:26 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace PACKAGE restaurants_pkg AS
+  PROCEDURE insert_restaurant(p_restaurant_id IN INTEGER, p_nume IN VARCHAR2, p_location IN VARCHAR2, p_capacity IN INTEGER);
+  PROCEDURE update_restaurant(p_restaurant_id IN INTEGER, p_nume IN VARCHAR2, p_location IN VARCHAR2, p_capacity IN INTEGER);
+  PROCEDURE delete_restaurant(p_restaurant_id IN INTEGER);
+END restaurants_pkg;</source>
+<body class="oracle.dbtools.crest.model.design.storage.oracle.PackageBodyOracle" name="restaurants_pkg" id="E14B0FC7-C27A-F6B5-1955-65C20031B2A2">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-25 15:50:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace NONEDITIONABLE PACKAGE BODY restaurants_pkg AS
+  PROCEDURE insert_restaurant(p_restaurant_id IN INTEGER, p_nume IN VARCHAR2, p_location IN VARCHAR2, p_capacity IN INTEGER) IS
+  BEGIN
+    INSERT INTO restaurants (restaurant_id, nume, location, capacity) VALUES (p_restaurant_id, p_nume, p_location, p_capacity);
+  END insert_restaurant;
+
+  PROCEDURE update_restaurant(p_restaurant_id IN INTEGER, p_nume IN VARCHAR2, p_location IN VARCHAR2, p_capacity IN INTEGER) IS
+  BEGIN
+    UPDATE restaurants SET nume = p_nume, location = p_location, capacity = p_capacity WHERE restaurant_id = p_restaurant_id;
+  END update_restaurant;
+
+  PROCEDURE delete_restaurant(p_restaurant_id IN INTEGER) IS
+  BEGIN
+    DELETE FROM restaurants WHERE restaurant_id = p_restaurant_id;
+  END delete_restaurant;
+END restaurants_pkg;</source>
+</body>
+</PackageOracle>

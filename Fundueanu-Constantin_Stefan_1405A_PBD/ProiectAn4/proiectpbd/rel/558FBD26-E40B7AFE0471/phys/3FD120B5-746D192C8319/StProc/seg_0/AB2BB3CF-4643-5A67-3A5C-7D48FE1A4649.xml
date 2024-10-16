@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<StoredProcedureOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.StoredProcedureOraclev10g" name="update_restaurant_capacity" directorySegmentName="seg_0" id="AB2BB3CF-4643-5A67-3A5C-7D48FE1A4649">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-26 18:43:37 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace NONEDITIONABLE PROCEDURE update_restaurant_capacity(p_restaurant_id IN INTEGER, p_new_capacity IN INTEGER) IS
+BEGIN
+  UPDATE restaurants
+  SET capacity = p_new_capacity
+  WHERE restaurant_id = p_restaurant_id;
+  COMMIT;
+END update_restaurant_capacity;</source>
+</StoredProcedureOraclev10g>

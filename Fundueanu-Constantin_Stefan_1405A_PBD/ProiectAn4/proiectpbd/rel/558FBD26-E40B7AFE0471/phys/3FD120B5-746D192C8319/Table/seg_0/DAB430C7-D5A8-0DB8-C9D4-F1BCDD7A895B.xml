@@ -1,0 +1,41 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="restaurants" directorySegmentName="seg_0" id="DAB430C7-D5A8-0DB8-C9D4-F1BCDD7A895B">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="restaurant_id" id="50D25BC4-49E3-CA73-6A3C-A2D6178A1170">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="location" id="58D535B8-6789-C3C7-8916-F6C4D8FCB288">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="capacity" id="824659F0-5C0B-AC3E-7A5D-7A4E2DE578EB">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="nume" id="96E78AAE-EB45-8B39-811E-7D271DF424F2">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="restaurants_pk" id="12E77153-B6E9-9A87-DC07-A80D82F91D39">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

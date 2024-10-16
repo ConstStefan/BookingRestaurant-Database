@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="71A5104C-520C-83DB-A4FE-8FE8341E0CD8" name="customers">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>F7FB87E1-48EB-9424-BE4D-E06B38016C8C</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="customer_id" id="090876BF-03D4-9B34-9A69-DF161D2F9B34">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>5A867A68-3090-1BBA-E65B-C9DBE9F60468</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9AF48BAB-4CEC-7D07-EE82-4F936DA5EF23</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nume" id="8690948C-0030-57BB-29EE-A77CD037EB16">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>9C7DD45F-BE0D-6015-4D83-B0F3B06CCDC4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>6B228094-7BBB-F9FB-890A-711688F609B8</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone" id="EC42315B-5DBD-5462-ACC4-028C7050078A">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>0E30DE8C-7796-5C81-3F48-F8C6EEBF0B03</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>1BB0F7B4-B0B9-F2D4-C16D-E5F0FF0F8380</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="25EA0C49-7F3D-80E6-9272-A343BC904350">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>F2F593E0-704A-50F9-97FA-313ECEAFDF4D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>3DBF3451-C43A-D1A0-9047-2C12A32D42B8</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C26A76AB-B41A-FB24-B541-5D71273CF2C7" name="customers_pk">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>C67AC4DE-1A5A-519C-BB36-A8D5B1D0113B</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="090876BF-03D4-9B34-9A69-DF161D2F9B34"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="22672C90-615C-D39A-E9BF-DAF0840500E9" name="customers_email_un">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>1C60B3B4-A365-DDCF-658F-05F107D9678A</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="25EA0C49-7F3D-80E6-9272-A343BC904350"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

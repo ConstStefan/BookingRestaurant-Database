@@ -1,0 +1,37 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="trg_prevent_multiple_managers" directorySegmentName="seg_0" id="C7AB885C-88D1-E25D-30ED-23CA95BA962E">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-26 18:52:06 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<actions>INSERT, UPDATE</actions>
+<body><![CDATA[DECLARE
+  v_count INTEGER;
+BEGIN
+  -- Verificam dacă exista deja un manager pentru restaurantul specificat
+  IF :NEW.restaurant_id IS NOT NULL THEN
+    SELECT COUNT(*)
+    INTO v_count
+    FROM restaurantmanagers
+    WHERE restaurant_id = :NEW.restaurant_id
+    AND (:OLD.manager_id IS NULL OR manager_id != :OLD.manager_id);
+
+    IF v_count > 0 THEN
+      RAISE_APPLICATION_ERROR(-20002, 'There is already a manager assigned to this restaurant.');
+    END IF;
+  END IF;
+
+  -- Verificam dacă restaurantul exista
+  IF :NEW.restaurant_id IS NOT NULL THEN
+    SELECT COUNT(*)
+    INTO v_count
+    FROM restaurants
+    WHERE restaurant_id = :NEW.restaurant_id;
+
+    IF v_count = 0 THEN
+      RAISE_APPLICATION_ERROR(-20003, 'The specified restaurant does not exist.');
+    END IF;
+  END IF;
+END trg_prevent_multiple_managers;]]></body>
+<triggerTime>BEFORE</triggerTime>
+<table>BE2E4306-11BD-2EBB-3E48-D1BDF0C4D40F</table>
+</TriggerOraclev10g>

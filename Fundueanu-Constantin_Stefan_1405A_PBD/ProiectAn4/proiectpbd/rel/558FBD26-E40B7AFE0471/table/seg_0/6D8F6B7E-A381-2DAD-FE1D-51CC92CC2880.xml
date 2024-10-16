@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6D8F6B7E-A381-2DAD-FE1D-51CC92CC2880" name="tabless">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>5CEE8417-CE17-01BB-EFD5-DDB2F38C9694</importedID>
+<ordsAlias>tables</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="table_id" id="D055E3E6-D420-9892-DBC8-DCBF380CBB20">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>9C6F7CCE-8C2E-3626-747E-06424FAA727F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9AF48BAB-4CEC-7D07-EE82-4F936DA5EF23</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numar" id="CB51F1C0-CEA9-7E80-C4B1-AC459B7480DB">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>B36C4BB5-21D5-6387-8E6C-3CE9476D594E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9AF48BAB-4CEC-7D07-EE82-4F936DA5EF23</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="seating_capacity" id="0FB8D9C7-5876-D7F8-FDA1-95D019F9A36B">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>5F5EF4CC-6B3B-6490-6492-2A3E33055023</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9AF48BAB-4CEC-7D07-EE82-4F936DA5EF23</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="restaurant_id" id="DCF4EC87-B37C-FB08-8E24-CB3A84A96FD0">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>DC7FED1D-9837-B005-7614-AC13F98F3615</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>9AF48BAB-4CEC-7D07-EE82-4F936DA5EF23</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="71EDA995-EFC4-6F9B-C98D-798E0A2ACCD7" referredColumn="50D25BC4-49E3-CA73-6A3C-A2D6178A1170"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="603FA22A-8B2B-AEA2-5781-15E16D31A519" name="tables_pk">
+<sourceDDLFile>schema.ddl</sourceDDLFile>
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<importedID>A4E3DA16-B73D-7F59-19DA-C38E7AB6AEF7</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D055E3E6-D420-9892-DBC8-DCBF380CBB20"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="819CBEB5-19B9-C8AB-855A-27C3124B02BC" name="tables_restaurants_fk">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-22 17:20:43 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DCF4EC87-B37C-FB08-8E24-CB3A84A96FD0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

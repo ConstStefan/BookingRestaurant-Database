@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="reservations_pkg" directorySegmentName="seg_0" id="DBF04EE0-A9D5-208D-898B-BB3F5CE51A66">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-25 15:36:37 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace PACKAGE reservations_pkg AS
+  PROCEDURE insert_reservation(p_reservation_id IN INTEGER, p_reservation_date IN TIMESTAMP, p_number_of_guests IN INTEGER, p_status IN VARCHAR2, p_table_id IN INTEGER, p_customer_id IN INTEGER);
+  PROCEDURE update_reservation(p_reservation_id IN INTEGER, p_reservation_date IN TIMESTAMP, p_number_of_guests IN INTEGER, p_status IN VARCHAR2, p_table_id IN INTEGER, p_customer_id IN INTEGER);
+  PROCEDURE delete_reservation(p_reservation_id IN INTEGER);
+END reservations_pkg;</source>
+<body class="oracle.dbtools.crest.model.design.storage.oracle.PackageBodyOracle" name="reservations_pkg" id="DBF04EE0-A9D5-208D-898B-BB3F5CE51A66">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-25 15:39:02 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace PACKAGE BODY reservations_pkg AS
+  PROCEDURE insert_reservation(p_reservation_id IN INTEGER, p_reservation_date IN TIMESTAMP, p_number_of_guests IN INTEGER, p_status IN VARCHAR2, p_table_id IN INTEGER, p_customer_id IN INTEGER) IS
+  BEGIN
+    INSERT INTO reservations (reservation_id, reservation_date, number_of_guests, status, table_id, customer_id) VALUES (p_reservation_id, p_reservation_date, p_number_of_guests, p_status, p_table_id, p_customer_id);
+  END insert_reservation;
+
+  PROCEDURE update_reservation(p_reservation_id IN INTEGER, p_reservation_date IN TIMESTAMP, p_number_of_guests IN INTEGER, p_status IN VARCHAR2, p_table_id IN INTEGER, p_customer_id IN INTEGER) IS
+  BEGIN
+    UPDATE reservations SET reservation_date = p_reservation_date, number_of_guests = p_number_of_guests, status = p_status, table_id = p_table_id, customer_id = p_customer_id WHERE reservation_id = p_reservation_id;
+  END update_reservation;
+
+PROCEDURE delete_reservation(p_reservation_id IN INTEGER) IS
+BEGIN
+DELETE FROM reservations WHERE reservation_id = p_reservation_id;
+END delete_reservation;
+END reservations_pkg;</source>
+</body>
+</PackageOracle>

@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="customers_pkg" directorySegmentName="seg_0" id="D3898A23-8B31-A75F-B8AC-0ABA16DF932F">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-25 14:15:09 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace PACKAGE customers_pkg AS
+  PROCEDURE insert_customer(p_customer_id IN INTEGER, p_nume IN VARCHAR2, p_phone IN VARCHAR2, p_email IN VARCHAR2);
+  PROCEDURE update_customer(p_customer_id IN INTEGER, p_nume IN VARCHAR2, p_phone IN VARCHAR2, p_email IN VARCHAR2);
+  PROCEDURE delete_customer(p_customer_id IN INTEGER);
+END customers_pkg;</source>
+<body class="oracle.dbtools.crest.model.design.storage.oracle.PackageBodyOracle" name="customers_pkg" id="D3898A23-8B31-A75F-B8AC-0ABA16DF932F">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-25 15:44:41 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace PACKAGE BODY customers_pkg AS
+  PROCEDURE insert_customer(p_customer_id IN INTEGER, p_nume IN VARCHAR2, p_phone IN VARCHAR2, p_email IN VARCHAR2) IS
+  BEGIN
+    INSERT INTO customers (customer_id, nume, phone, email) VALUES (p_customer_id, p_nume, p_phone, p_email);
+  END insert_customer;
+
+  PROCEDURE update_customer(p_customer_id IN INTEGER, p_nume IN VARCHAR2, p_phone IN VARCHAR2, p_email IN VARCHAR2) IS
+  BEGIN
+    UPDATE customers SET nume = p_nume, phone = p_phone, email = p_email WHERE customer_id = p_customer_id;
+  END update_customer;
+
+  PROCEDURE delete_customer(p_customer_id IN INTEGER) IS
+  BEGIN
+    DELETE FROM customers WHERE customer_id = p_customer_id;
+  END delete_customer;
+END customers_pkg;</source>
+</body>
+</PackageOracle>

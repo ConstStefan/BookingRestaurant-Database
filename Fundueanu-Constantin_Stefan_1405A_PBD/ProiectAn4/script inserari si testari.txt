@@ -1,0 +1,185 @@
+---inserturi pentru customers
+
+INSERT INTO customers (customer_id, name, phone, email) VALUES (1, 'John Doe', '1234567890', 'john.doe@example.com');
+INSERT INTO customers (customer_id, name, phone, email) VALUES (2, 'Jane Smith', '2345678901', 'jane.smith@example.com');
+INSERT INTO customers (customer_id, name, phone, email) VALUES (3, 'Emily Johnson', '3456789012', 'emily.johnson@example.com');
+
+--inserare din pachet
+SET SERVEROUTPUT ON;
+
+BEGIN
+    customers_pkg.insert_customer(4, 'Michael Brown', '4567890123', 'michael.brown@example.com');
+    DBMS_OUTPUT.PUT_LINE('Clientul a fost inserat cu succes.');
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Eroare la inserarea clientului: ' || SQLERRM);
+END;
+/
+
+
+
+--inserari pentru restaurante
+INSERT INTO restaurants (restaurant_id, nume, location, capacity) VALUES (1, 'The Gourmet Kitchen', '123 Elm Street', 50);
+INSERT INTO restaurants (restaurant_id, nume, location, capacity) VALUES (2, 'Seafood Paradise', '456 Oak Avenue', 60);
+INSERT INTO restaurants (restaurant_id, nume, location, capacity) VALUES (3, 'Steakhouse Delight', '789 Pine Road', 70);
+
+--inserare din pachet
+SET SERVEROUTPUT ON;
+
+BEGIN
+    restaurants_pkg.insert_restaurant(4, 'Veggie Haven', '101 Maple Blvd', 40);
+    
+    DBMS_OUTPUT.PUT_LINE('Restaurantul a fost inserat cu succes.');
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Eroare la inserarea restaurantului: ' || SQLERRM);
+END;
+/
+
+
+--inserturi pentru tables
+INSERT INTO tabless (table_id, numar, seating_capacity, restaurant_id) VALUES (1, 1, 4, 1);
+INSERT INTO tabless (table_id, numar, seating_capacity, restaurant_id) VALUES (2, 2, 3, 2);
+INSERT INTO tabless (table_id, numar, seating_capacity, restaurant_id) VALUES (3, 3, 6, 3);
+
+--inserare din pachet
+SET SERVEROUTPUT ON;
+
+BEGIN
+    tabless_pkg.insert_table(4, 10, 8, 1);
+    
+    DBMS_OUTPUT.PUT_LINE('Masa a fost inserat cu succes.');
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Eroare la inserarea mesei: ' || SQLERRM);
+END;
+/
+
+
+
+--inserturi pentru manageri
+INSERT INTO restaurantmanagers (manager_id, nume, phone, email, restaurant_id) VALUES (1, 'Alice Green', '6789012345', 'alice.green@example.com', 1);
+INSERT INTO restaurantmanagers (manager_id, nume, phone, email, restaurant_id) VALUES (2, 'Bob White', '7890123456', 'bob.white@example.com', 2);
+INSERT INTO restaurantmanagers (manager_id, nume, phone, email, restaurant_id) VALUES (3, 'Carol Black', '8901234567', 'carol.black@example.com', 3);
+
+--inserare din pachet
+SET SERVEROUTPUT ON;
+
+BEGIN
+    restaurantmanagers_pkg.insert_manager(4, 'David Gray', '9012345678', 'david.gray@example.com', 4);
+    
+    DBMS_OUTPUT.PUT_LINE('Managerul a fost inserat cu succes.');
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Eroare la inserarea managerului: ' || SQLERRM);
+END;
+/
+
+
+--inserturi pentru rezervari
+
+INSERT INTO reservations (reservation_id, reservation_date, number_of_guests, status, table_id, customer_id) VALUES (1, TIMESTAMP '2024-06-01 19:00:00', 4, 'Confirmed', 1, 1);
+INSERT INTO reservations (reservation_id, reservation_date, number_of_guests, status, table_id, customer_id) VALUES (2, TIMESTAMP '2024-06-02 20:00:00', 2, 'Confirmed', 2, 2);
+INSERT INTO reservations (reservation_id, reservation_date, number_of_guests, status, table_id, customer_id) VALUES (3, TIMESTAMP '2024-06-03 18:00:00', 3, 'Pending', 3, 3);
+
+--inserare din pachet
+SET SERVEROUTPUT ON;
+
+BEGIN
+    reservations_pkg.insert_reservation(4, TIMESTAMP '2024-06-04 21:00:00', 5, 'Confirmed', 4, 4);
+    
+    DBMS_OUTPUT.PUT_LINE('Rezervarea a fost inserat cu succes.');
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Eroare la inserarea rezervarii: ' || SQLERRM);
+END;
+/
+
+
+---Testare functii, triggeri, proceduri
+
+--test pentru a vedea numarul total de customeri + invitatii fiecaruia dintre ei la un anumit restaurant
+SET SERVEROUTPUT ON;
+
+DECLARE
+  v_total_count INTEGER;
+BEGIN
+  v_total_count := get_total_customers_and_guests_for_restaurant(1);
+  DBMS_OUTPUT.PUT_LINE('Numărul total de clienți și invitați pentru restaurantul 1: ' || v_total_count);
+END;
+/
+
+
+
+
+--test ce returneaza numarul total de rezervari confirmate 
+SET SERVEROUTPUT ON;
+
+DECLARE
+  v_total_reservations INTEGER;
+BEGIN
+  v_total_reservations := get_total_confirmed_reservations;
+  DBMS_OUTPUT.PUT_LINE('Numarul total de rezervari confirmate: ' || v_total_reservations);
+END;
+/
+
+
+--test pentru functie care sterge un anumit customer si rezervarile asociate acestuia
+BEGIN
+  delete_customer_and_reservations(4);
+  DBMS_OUTPUT.PUT_LINE('Clientul și rezervarile asociate au fost sterse.');
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Eroare la stergerea clientului și a rezervrilor: ' || SQLERRM);
+END;
+/
+
+
+
+
+--test pentru a vizualiza toate rezervarile facute de un customer
+
+BEGIN
+  ListReservationsForCustomer(1);
+END;
+/
+
+
+
+--procedura pentru actualizarea capacitatii unui restaurant
+
+BEGIN
+  update_restaurant_capacity(1, 100);
+  DBMS_OUTPUT.PUT_LINE('Capacitatea restaurantului a fost actualizata.');
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Eroare la actualizarea capacitatii restaurantului: ' || SQLERRM);
+END;
+/
+
+
+
+--procedura actualizare rezervare, daca setam statusul acesteia pe cancelled, rezervarea va fi stearsa
+
+
+BEGIN
+  UpdateReservation(3, 3, TIMESTAMP '2024-06-02 20:00:00', 4, 'Confirmed');
+  DBMS_OUTPUT.PUT_LINE('Rezervare actualizată.');
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Eroare la actualizarea rezervării: ' || SQLERRM);
+END;
+/
+
+
+--test pentru triggerul care nu te lasa sa inserezi o rezervare in care numarul persoanelor depaseste capacitatea mesei 
+INSERT INTO reservations (reservation_id, reservation_date, number_of_guests, status, table_id, customer_id)
+  VALUES (3, TIMESTAMP '2024-06-02 20:00:00', 10, 'Confirmed', 4, 3);
+
+
+--test pentru triggerul care nu te lasa sa inserezi 2 manageri pentru acelasi restaurant
+INSERT INTO restaurantmanagers (manager_id, nume, phone, email, restaurant_id) VALUES (301, 'Second Manager', '0987654321', 'second.manager@example.com', 1);
+
+--test pentru trigerul care te anunta daca capacitatea tuturor meselor din cadrul unui restaurant depaseste capacitatea acceptata de restaurant. Pentru a preveni inserarea unei alte mese.
+INSERT INTO tabless (table_id, numar, seating_capacity, restaurant_id) VALUES (10, 10, 40, 4);
+INSERT INTO tabless (table_id, numar, seating_capacity, restaurant_id) VALUES (11, 11, 41, 4);

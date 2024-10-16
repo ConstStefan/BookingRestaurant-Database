@@ -1,0 +1,29 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="trg_check_restaurant_capacity" directorySegmentName="seg_0" id="B38E8B06-D3B4-17FA-BED4-CD2BE9A981DD">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-26 18:45:47 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<actions>INSERT, UPDATE</actions>
+<body><![CDATA[DECLARE
+  v_total_seating_capacity INTEGER;
+  v_restaurant_capacity INTEGER;
+BEGIN
+  -- Obtine capacitatea totala a restaurantului
+  SELECT capacity INTO v_restaurant_capacity
+  FROM restaurants
+  WHERE restaurant_id = :NEW.restaurant_id;
+
+  -- Calculeaza suma capacitaților meselor existente și noua masa
+  SELECT SUM(seating_capacity) + :NEW.seating_capacity INTO v_total_seating_capacity
+  FROM tabless
+  WHERE restaurant_id = :NEW.restaurant_id
+  AND (table_id != :OLD.table_id OR :OLD.table_id IS NULL);
+
+  -- Verific dac suma depaseste capacitatea restaurantului
+  IF v_total_seating_capacity > v_restaurant_capacity THEN
+    RAISE_APPLICATION_ERROR(-20004, 'The total seating capacity exceeds the capacity of the restaurant.');
+  END IF;
+  END trg_check_restaurant_capacity;]]></body>
+<triggerTime>BEFORE</triggerTime>
+<table>6D8F6B7E-A381-2DAD-FE1D-51CC92CC2880</table>
+</TriggerOraclev10g>

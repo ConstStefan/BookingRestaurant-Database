@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<StoredProcedureOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.StoredProcedureOraclev10g" name="UpdateReservation" directorySegmentName="seg_0" id="736CB4CD-3910-A1E5-22A1-A64C299B17A3">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-26 18:43:51 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace NONEDITIONABLE PROCEDURE UpdateReservation(
+    p_reservation_id INT,
+    p_new_table_id INT,
+    p_new_reservation_date TIMESTAMP,
+    p_new_number_of_guests INT,
+    p_new_status VARCHAR2
+) AS
+BEGIN
+    IF p_new_status = &apos;Cancelled&apos; THEN
+        DELETE FROM reservations
+        WHERE reservation_id = p_reservation_id;
+        DBMS_OUTPUT.PUT_LINE(&apos;Rezervare anulata si stearsa cu succes.&apos;);
+    ELSE
+        UPDATE reservations
+        SET table_id = p_new_table_id,
+            reservation_date = p_new_reservation_date,
+            number_of_guests = p_new_number_of_guests,
+            status = p_new_status
+        WHERE reservation_id = p_reservation_id;
+        DBMS_OUTPUT.PUT_LINE(&apos;Rezervare actualizata cu succes.&apos;);
+    END IF;
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE(&apos;Eroare la actualizarea rezervarii: &apos; || SQLERRM);
+END;</source>
+</StoredProcedureOraclev10g>

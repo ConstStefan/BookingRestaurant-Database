@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FunctionOracle class="oracle.dbtools.crest.model.design.storage.oracle.FunctionOracle" name="get_total_customers_and_guests_for_restaurant" directorySegmentName="seg_0" id="3EE6580C-F96D-38CD-2507-A850AA413CF2">
+<createdBy>stefa</createdBy>
+<createdTime>2024-05-26 18:45:06 UTC</createdTime>
+<ownerDesignName>proiectpbd</ownerDesignName>
+<source>create or replace NONEDITIONABLE FUNCTION get_total_customers_and_guests_for_restaurant(
+    p_restaurant_id IN INTEGER
+) RETURN INTEGER IS
+  v_total_customers INTEGER;
+  v_total_guests INTEGER;
+  v_total_count INTEGER;
+BEGIN
+  -- Calcularea numarului total de clienti pentru un anumit restaurant
+  SELECT COUNT(DISTINCT c.customer_id)
+  INTO v_total_customers
+  FROM customers c
+  JOIN reservations r ON c.customer_id = r.customer_id
+  JOIN tabless t ON r.table_id = t.table_id
+  WHERE t.restaurant_id = p_restaurant_id;
+
+  -- Calcularea numarului total de invitati pentru un anumit restaurant
+  SELECT SUM(r.number_of_guests)
+  INTO v_total_guests
+  FROM reservations r
+  JOIN tabless t ON r.table_id = t.table_id
+  WHERE t.restaurant_id = p_restaurant_id;
+
+  
+  v_total_count := v_total_customers + v_total_guests;
+
+ 
+  RETURN v_total_count;
+END get_total_customers_and_guests_for_restaurant;
+</source>
+</FunctionOracle>
